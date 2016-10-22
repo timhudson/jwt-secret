@@ -1,9 +1,14 @@
-const jwt = require('jsonwebtoken')
+const jws = require('jws')
 const jwa = require('jwa')
 const through = require('through2')
 
 module.exports = token => {
-  const decoded = jwt.decode(token, {complete: true})
+  const decoded = jws.decode(token)
+
+  if (!decoded) {
+    throw new Error('Invalid token')
+  }
+
   const content = token.replace(/\.[^.]+$/, '')
   const sign = jwa(decoded.header.alg).sign
 
