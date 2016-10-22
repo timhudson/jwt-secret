@@ -8,6 +8,7 @@ const meow = require('meow')
 const ora = require('ora')
 const numeral = require('numeral')
 const logUpdate = require('log-update')
+const {isValid} = require('jws')
 const through = require('through2')
 const split = require('binary-split')
 const jwtSecret = require('./')
@@ -39,6 +40,13 @@ if (opts.stdin) {
 if (!token || !input) {
   console.log(cli.help)
   process.exit(1)
+}
+
+if (!isValid(token)) {
+  const message = chalk.red('Invalid JWT.') + chalk.dim(' It should look something like:')
+  const exampleToken = chalk.dim('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ')
+  logUpdate(`\n\n    ${message}\n    ${exampleToken}`)
+  process.exit()
 }
 
 const data = {
