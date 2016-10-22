@@ -1,6 +1,6 @@
 {
   "name": "jwt-secret",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Bruteforce a JWT against a list of passwords",
   "license": "MIT",
   "repository": "timhudson/jwt-secret",
