@@ -1,0 +1,88 @@
+{
+  "name": "timhudson/jwt-secret",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "",
+  "branch": "",
+  "style": {
+    "name": "Swiss",
+    "componentSet": {
+      "nav": "nav/BasicNav",
+      "header": "header/SwissHeader",
+      "article": "article/SwissArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "heading": {
+      "fontWeight": 700,
+      "letterSpacing": "-0.01em"
+    },
+    "layout": {
+      "fluid": true
+    },
+    "colors": {
+      "text": "#000",
+      "background": "#fff",
+      "primary": "#05a",
+      "secondary": "#444",
+      "highlight": "#f30",
+      "border": "#ccc",
+      "muted": "#eee"
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/timhudson/jwt-secret",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://npmjs.com/package/jwt-secret",
+          "text": "npm"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "jwt-secret",
+      "subhead": "Bruteforce a JWT against a list of passwords",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "jwt-secret: Bruteforce a JWT against a list of passwords",
+          "url": ""
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "timhudson",
+          "repo": "jwt-secret"
+        }
+      ],
+      "text": "v1.1.1"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n<blockquote>\n\n</blockquote>\n<p><img src=\"screenshot.gif\"></p>\n<p>Your <a href=\"https://jwt.io/\">JWT</a> is only as secure as the secret used to sign it.\nTest a JWT against any arbitrary list of secrets.</p>\n<h2>Install</h2>\n<p>Ensure you have <a href=\"https://nodejs.org\">Node.js</a> version 4+ installed. Then run the following:</p>\n<pre>$ <span class=\"hljs-built_in\">npm</span> install --<span class=\"hljs-built_in\">global</span> jwt-secret</pre><h2>Usage</h2>\n<pre><span class=\"hljs-symbol\">$</span> jwt-secret --help\n\n  Usage\n    <span class=\"hljs-symbol\">$</span> jwt-secret &lt;token&gt;\n\n    --<span class=\"hljs-keyword\">file</span>   Read secrets from <span class=\"hljs-keyword\">file</span> path\n    --stdin  Read secrets from stdin\n\n  Examples\n    <span class=\"hljs-symbol\">$</span> jwt-secret --<span class=\"hljs-keyword\">file</span> ./passwords.txt eyJhbGciOiJIUzI1...\n    <span class=\"hljs-symbol\">$</span> curl -sL https:<span class=\"hljs-comment\">//git.io/vP5n1 | jwt-secret --stdin eyJhbGciOiJIUzI1...</span></pre><h2>Secrets</h2>\n<p>Secrets must be newline separated. Try using a list from <a href=\"https://github.com/danielmiessler/SecLists/tree/master/Passwords\">SecLists</a>.</p>\n<p><strong>Example:</strong></p>\n<pre><span class=\"hljs-number\">123456</span>\npassword\n<span class=\"hljs-number\">12345678</span>\nqwerty\n<span class=\"hljs-number\">123456789</span>\n<span class=\"hljs-number\">12345</span>\n<span class=\"hljs-number\">1234</span>\n<span class=\"hljs-number\">111111</span>\n<span class=\"hljs-number\">1234567</span>\ndragon</pre><h2>License</h2>\n<p>MIT &#xA9; Tim Hudson</p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/timhudson/jwt-secret",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/timhudson",
+          "text": "timhudson"
+        }
+      ]
+    }
+  ]
+}
